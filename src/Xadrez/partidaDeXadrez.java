@@ -28,12 +28,19 @@ public class partidaDeXadrez {
 		tabuleiro.lugarPeca(peca, new PosicaoXadrez(coluna,linha).toPosicao() );
 	}
 	private void configuracaoInicial() {
-		colocarPeca('a', 8, new torre(tabuleiro, Cor.BRANCO));
-		colocarPeca('a', 1, new torre(tabuleiro, Cor.PRETO));
-		colocarPeca('h', 7, new torre(tabuleiro, Cor.BRANCO));
-		colocarPeca('h', 1, new torre(tabuleiro, Cor.PRETO));
-		colocarPeca('e', 8, new Rei(tabuleiro, Cor.BRANCO));
-		colocarPeca('e', 1, new Rei(tabuleiro, Cor.PRETO));
+		colocarPeca('b', 6, new torre(tabuleiro, Cor.BRANCO));
+		colocarPeca('e', 1, new Rei(tabuleiro, Cor.BRANCO));
+		colocarPeca('c', 1, new torre(tabuleiro, Cor.BRANCO));
+		colocarPeca('c', 2, new torre(tabuleiro, Cor.BRANCO));
+		colocarPeca('d', 2, new torre(tabuleiro, Cor.BRANCO));
+		colocarPeca('e', 2, new torre(tabuleiro, Cor.BRANCO));
+		colocarPeca('d', 1, new Rei(tabuleiro, Cor.BRANCO));
+		colocarPeca('c', 7, new torre(tabuleiro,Cor.PRETO));
+		colocarPeca('c', 8, new torre(tabuleiro,Cor.PRETO));
+		colocarPeca('d', 7, new torre(tabuleiro,Cor.PRETO));
+		colocarPeca('e', 7, new torre(tabuleiro,Cor.PRETO));
+		colocarPeca('e', 8, new torre(tabuleiro,Cor.PRETO));
+		colocarPeca('d', 8, new Rei(tabuleiro,Cor.PRETO));
 	}
 	
 
