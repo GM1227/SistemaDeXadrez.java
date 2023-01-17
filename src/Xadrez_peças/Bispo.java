@@ -6,15 +6,15 @@ package Xadrez_peças;
 	import Xadrez.pecaDeXadrez;
 	import Xadrez.Cor;
 
-	public class Torre extends pecaDeXadrez {
+	public class Bispo extends pecaDeXadrez {
 
-		public Torre(Tabuleiro tabuleiro, Cor cor) {
+		public Bispo(Tabuleiro tabuleiro, Cor cor) {
 			super(tabuleiro, cor);
 		}
 
 		@Override
 		public String toString() {
-			return "T";
+			return "B";
 		}
 		
 		@Override
@@ -23,51 +23,51 @@ package Xadrez_peças;
 			
 			Posicao p = new Posicao(0, 0);
 			
-			// above
-			p.definirValores(posicao.getLinha() - 1, posicao.getColuna());
+			// nw
+			p.definirValores(posicao.getLinha() - 1, posicao.getColuna() - 1);
 			while (getTabuleiro().posicaoExiste(p) && !getTabuleiro().pecaExiste(p)) {
 				mat[p.getLinha()][p.getColuna()] = true;
-				p.setLinha(p.getLinha() - 1);
+				p.definirValores(p.getLinha() - 1, p.getColuna() - 1);
 			}
 			if (getTabuleiro().posicaoExiste(p) && temOponente(p)) {
 				mat[p.getLinha()][p.getColuna()] = true;
 			}
 			
-			// left
-			p.definirValores(posicao.getLinha(), posicao.getColuna()-1);
+			// ne
+			p.definirValores(posicao.getLinha() - 1, posicao.getColuna() + 1);
 			while (getTabuleiro().posicaoExiste(p) && !getTabuleiro().pecaExiste(p)) {
 				mat[p.getLinha()][p.getColuna()] = true;
-				p.setColuna(p.getColuna() - 1);
+				p.definirValores(p.getLinha() - 1, p.getColuna() + 1);
 			}
 			if (getTabuleiro().posicaoExiste(p) && temOponente(p)) {
 				mat[p.getLinha()][p.getColuna()] = true;
 			}
 			
-			
-			// right
-			p.definirValores(posicao.getLinha(), posicao.getColuna()+1);
+			// se
+			p.definirValores(posicao.getLinha() + 1, posicao.getColuna() + 1);
 			while (getTabuleiro().posicaoExiste(p) && !getTabuleiro().pecaExiste(p)) {
 				mat[p.getLinha()][p.getColuna()] = true;
-				p.setColuna(p.getColuna() + 1);
+				p.definirValores(p.getLinha() + 1, p.getColuna() + 1);
 			}
 			if (getTabuleiro().posicaoExiste(p) && temOponente(p)) {
 				mat[p.getLinha()][p.getColuna()] = true;
 			}
 			
-			// below
-			p.definirValores(posicao.getLinha() + 1, posicao.getColuna());
+			// sw
+			p.definirValores(posicao.getLinha() + 1, posicao.getColuna() - 1);
 			while (getTabuleiro().posicaoExiste(p) && !getTabuleiro().pecaExiste(p)) {
 				mat[p.getLinha()][p.getColuna()] = true;
-				p.setLinha(p.getLinha() + 1);
+				p.definirValores(p.getLinha() + 1, p.getColuna() - 1);
 			}
 			if (getTabuleiro().posicaoExiste(p) && temOponente(p)) {
 				mat[p.getLinha()][p.getColuna()] = true;
 			}
-			
 			
 			return mat;
 		}
 	}
+
+
 
 
 
